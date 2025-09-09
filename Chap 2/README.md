@@ -131,11 +131,13 @@ m-인접성을 사용하는 이유는 8-인접성에서 나타나는 모호성�
 
 - 이미지 간의 산술 연산은 배열 연산과 동일하다:
 
-![equation](https://latex.codecogs.com/png.image?\dpi{150}&space;s(x,y)=f(x,y)+g(x,y),\quad&space;d(x,y)=f(x,y)-g(x,y),\quad&space;p(x,y)=f(x,y)\times&space;g(x,y),\quad&space;v(x,y)=f(x,y)\div&space;g(x,y))
+<img width="972" height="486" alt="image" src="https://github.com/user-attachments/assets/9941717e-2a9e-4cc9-ac0d-085f5c393cf2" />
 
 - 선형성 : 
+<img width="912" height="390" alt="image" src="https://github.com/user-attachments/assets/064f5a45-6471-4649-9d2b-4d4d051ab158" />
 
 ex) max 연산
+<img width="959" height="403" alt="image" src="https://github.com/user-attachments/assets/61499992-f830-4ad9-b609-4e5754a28923" />
 
 ---
 
@@ -159,13 +161,24 @@ ex) max 연산
 
 ###  영상 뺄셈 (Image Subtraction)
 
-![equation](https://latex.codecogs.com/png.image?\dpi{150}&space;g(x,y)=f(x,y)-h(x,y))
-
+g(x,y)=f(x,y)-h(x,y)
+- `f(x,y)` : **Live image** (조영제를 주입한 후 촬영한 영상)  
+- `h(x,y)` : **Mask image** (조영제를 주입하기 전 촬영한 영상)  
+- `g(x,y)` : **Subtracted image** (두 영상의 차이만 남긴 결과)
 - 차분 영상으로 **변화 탐지** 가능  
-- 예: Mask Mode Radiography  
-  - ![equation](https://latex.codecogs.com/png.image?\dpi{150}&space;h(x,y)) : 대비 물질 주입 전 영상 (mask)  
-  - ![equation](https://latex.codecogs.com/png.image?\dpi{150}&space;f(x,y)) : 주입 후 영상 (live)  
 
+1. **Mask Image (h(x,y))**  
+   - 조영제를 주입하기 전 X-ray 영상 촬영  
+   - 뼈와 배경이 포함된 기본 영상  
+
+2. **Live Image (f(x,y))**  
+   - 조영제를 주입한 후 다시 촬영한 X-ray 영상  
+   - 혈관 속 조영제가 보이기 시작  
+
+3. **Subtraction (g(x,y))**  
+   - `f(x,y) - h(x,y)` 연산 수행  
+   - 배경(뼈, 고정된 조직)은 상쇄되어 제거  
+   - 혈관(조영제가 흘러간 부분)만 남음  
 ---
 
 #  집합 & 논리 연산 (Set and Logical Operations)
@@ -173,12 +186,13 @@ ex) max 연산
 ## 회색조 영상의 집합 표현
 
 gray scale image는 
+<img width="855" height="175" alt="image" src="https://github.com/user-attachments/assets/336b4828-faee-45f9-8f6c-f445e43cd644" />
 
 다음과 같이 표현가능하다
 
 ## 보수 (Complement)
 
-![equation](https://latex.codecogs.com/png.image?\dpi{150}&space;A^c=\{(x,y,K-z)\mid&space;(x,y,z)\in&space;A\},\quad&space;K=2^k-1)
+<img width="844" height="147" alt="image" src="https://github.com/user-attachments/assets/72d3b6a7-6717-45ed-8d9a-370e978d462a" />
 
 - 예: 8비트 영상 (\(k=8\)) → \(K=255\)  
 - 픽셀 값 200 → 보수 = 55  
@@ -190,11 +204,8 @@ gray scale image는
 ## 1. 단일 픽셀 연산 (Single-pixel Operation)
 픽셀 값 변환 함수:
 
-![equation](https://latex.codecogs.com/png.image?\dpi{150}&space;s=T(z))
+<img width="1167" height="585" alt="image" src="https://github.com/user-attachments/assets/b689e5de-e8c2-400c-82d6-9db15f66d09a" />
 
-- **예: 네거티브 변환**
-
-![equation](https://latex.codecogs.com/png.image?\dpi{150}&space;s=255-z)
 
 ---
 
@@ -212,16 +223,17 @@ gray scale image는
 
 - 이동, 회전, 확대/축소, 기울이기(왜곡) 포함
 - 기본 변환식 :
+<img width="729" height="137" alt="image" src="https://github.com/user-attachments/assets/ea49cc97-863e-4fff-9a75-122bb1d7d850" />
 
 - 아핀 변환식:
 
-![equation](https://latex.codecogs.com/png.image?\dpi{150}&space;\begin{bmatrix}x&y&1\end{bmatrix}=\begin{bmatrix}v&w&1\end{bmatrix}\begin{bmatrix}t_{11}&t_{12}&0\\t_{21}&t_{22}&0\\t_{31}&t_{32}&1\end{bmatrix})
+<img width="743" height="690" alt="image" src="https://github.com/user-attachments/assets/2e4138a6-7d23-45a6-9331-435fc52b8707" />
 
 ---
 
 ## 영상 정합 (Image Registration)
 
-여러 영상(다른 시간/센서/각도)을 정렬하는 과정.  
+두 장 이상의 동일 장면 이미지를 서로 맞추는 과정. 
 - **Tie points (제어점)** 활용  
 
 **Bilinear Approximation Model**:
