@@ -129,9 +129,13 @@ m-인접성을 사용하는 이유는 8-인접성에서 나타나는 모호성�
 
 # 산술 연산 (Arithmetic Operations)
 
-이미지 간의 산술 연산은 배열 연산과 동일하다:
+- 이미지 간의 산술 연산은 배열 연산과 동일하다:
 
 ![equation](https://latex.codecogs.com/png.image?\dpi{150}&space;s(x,y)=f(x,y)+g(x,y),\quad&space;d(x,y)=f(x,y)-g(x,y),\quad&space;p(x,y)=f(x,y)\times&space;g(x,y),\quad&space;v(x,y)=f(x,y)\div&space;g(x,y))
+
+- 선형성 : 
+
+ex) max 연산
 
 ---
 
@@ -168,7 +172,9 @@ m-인접성을 사용하는 이유는 8-인접성에서 나타나는 모호성�
 
 ## 회색조 영상의 집합 표현
 
-![equation](https://latex.codecogs.com/png.image?\dpi{150}&space;A=\{(x,y,z)\mid&space;z=f(x,y)\})
+gray scale image는 
+
+다음과 같이 표현가능하다
 
 ## 보수 (Complement)
 
@@ -204,7 +210,9 @@ m-인접성을 사용하는 이유는 8-인접성에서 나타나는 모호성�
 
 ## 3. 기하학적 공간 변환 (Geometric Spatial Transformations)
 
-- 이동, 회전, 확대/축소, 기울이기(왜곡) 포함  
+- 이동, 회전, 확대/축소, 기울이기(왜곡) 포함
+- 기본 변환식 :
+
 - 아핀 변환식:
 
 ![equation](https://latex.codecogs.com/png.image?\dpi{150}&space;\begin{bmatrix}x&y&1\end{bmatrix}=\begin{bmatrix}v&w&1\end{bmatrix}\begin{bmatrix}t_{11}&t_{12}&0\\t_{21}&t_{22}&0\\t_{31}&t_{32}&1\end{bmatrix})
