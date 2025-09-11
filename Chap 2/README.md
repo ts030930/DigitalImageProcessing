@@ -298,4 +298,40 @@ gray scale image는
 
 ---
 
+# Spatial Domain과 Transform domain에서의 Processing
+
+
+## Intensity transformation과 Spatial filtering
+
+Intensity transformations :  단일 Pixel 단위의 Processing
+
+Spatial filtering : 여러개의 Pixel 단위으 Processing
+
+기본 Spatial Domain 
+
+<img width="1303" height="510" alt="image" src="https://github.com/user-attachments/assets/9dabb5e0-130a-4f26-8d5e-e11f920386ba" />
+
+### Intensity transformation
+
+1. Contrest Streching
+
+<img width="877" height="780" alt="image" src="https://github.com/user-attachments/assets/7fa631a2-47af-472a-8180-b7b139fa2e80" />
+
+효과 : 어두운 부분을 더 어둡게, 밝은 부분을 더 밝게 해서 대비를 강조시킨다.
+
+2. Thresholding
+
+<img width="588" height="615" alt="image" src="https://github.com/user-attachments/assets/282854eb-48f3-4334-908e-7fde2f063ade" />
+<img width="1394" height="712" alt="image" src="https://github.com/user-attachments/assets/cb1ecd87-8d4c-402b-9c37-7aad7cbddcb5" />
+
+효과 : Binary Image를 만든다.
+
+3. Negative Transformation
+
+<img width="735" height="292" alt="image" src="https://github.com/user-attachments/assets/1ac8bea4-0c23-4f78-858e-b9b02edf04f4" />
+<img width="697" height="676" alt="image" src="https://github.com/user-attachments/assets/d0be3ec7-d96b-4358-a841-d281a7e93ac7" />
+<img width="1417" height="755" alt="image" src="https://github.com/user-attachments/assets/bfcc6cb6-c23c-4299-a51c-0f96b43d1ab8" />
+
+효과 : 밝은 부분과 어두운 부분을 반전 시켜서 Xray와 같은 경우에 도움이 된다.
+
 
