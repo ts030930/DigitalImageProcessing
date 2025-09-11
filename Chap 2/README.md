@@ -311,13 +311,20 @@ Spatial filtering : 여러개의 Pixel 단위으 Processing
 
 <img width="1303" height="510" alt="image" src="https://github.com/user-attachments/assets/9dabb5e0-130a-4f26-8d5e-e11f920386ba" />
 
+
+---
+
 ### Intensity transformation
+
+---
 
 1. Contrest Streching
 
 <img width="877" height="780" alt="image" src="https://github.com/user-attachments/assets/7fa631a2-47af-472a-8180-b7b139fa2e80" />
 
 효과 : 어두운 부분을 더 어둡게, 밝은 부분을 더 밝게 해서 대비를 강조시킨다.
+
+---
 
 2. Thresholding
 
@@ -326,6 +333,8 @@ Spatial filtering : 여러개의 Pixel 단위으 Processing
 
 효과 : Binary Image를 만든다.
 
+---
+
 3. Negative Transformation
 
 <img width="735" height="292" alt="image" src="https://github.com/user-attachments/assets/1ac8bea4-0c23-4f78-858e-b9b02edf04f4" />
@@ -333,5 +342,50 @@ Spatial filtering : 여러개의 Pixel 단위으 Processing
 <img width="1417" height="755" alt="image" src="https://github.com/user-attachments/assets/bfcc6cb6-c23c-4299-a51c-0f96b43d1ab8" />
 
 효과 : 밝은 부분과 어두운 부분을 반전 시켜서 Xray와 같은 경우에 도움이 된다.
+
+---
+4. Log Transformation
+
+
+<img width="860" height="197" alt="image" src="https://github.com/user-attachments/assets/98ba5cbf-b7ea-4711-a71c-fd14382b8b08" />
+<img width="737" height="722" alt="image" src="https://github.com/user-attachments/assets/8089a637-efc8-42ce-854b-67c059269ac5" />
+
+효과 및 특징 : Non linearity를 부여한다. 범위에 주의하고, 위 함수를 보면, Dark 영역을 확장하고 Light 부분을 축소시킨다. 
+그렇게되면 어두운 영역의 Detail이 증가한다.
+y = x 대칭을 통해 Dark 영역을 축소시키고 Light 영역을 확대시킬수도 있다.
+
+---
+
+5. Power-law (Gamma) Transformation
+
+<img width="907" height="63" alt="image" src="https://github.com/user-attachments/assets/c1f24d80-2510-4e87-86ec-8929356d6d2a" />
+<img width="875" height="813" alt="image" src="https://github.com/user-attachments/assets/e9e7b811-194c-4939-9ae5-673a1c70df25" />
+
+γ < 1 : 어두운 영역을 확장하고 즉 어두운 영역의 대비를 강화하고 전체적으로 밝게 한다. 
+γ > 1 : 밝은 영역을 확장하고 즉 밝은 영역으 대비를 강화하고 전체적으로 어둡게한다.
+Y = 1 : 항등 변환 (출력 = 입력)
+
+---
+
+7. Piecewise Linear Transformation Functions
+
+- Contrast Stretching : 
+<img width="912" height="897" alt="image" src="https://github.com/user-attachments/assets/530e4fea-ffb3-4ba9-8a10-85e3353001ee" />
+
+어두운 픽셀은 더 어두워지고, 밝은 픽셀은 더 밝아진다.
+입력 픽셀 값의 특정 구간을 선택해 선형적으로 확장/압축.
+영상의 전체적인 **대비(contrast)**를 증가시켜 세부 사항을 더 뚜렷하게 표현.
+
+
+- Intensity-Level Slicing :
+<img width="1492" height="665" alt="image" src="https://github.com/user-attachments/assets/943aba99-32a0-465d-97c5-f20195b5080f" />
+
+영상에서 특정 강도(밝기) 구간만 강조하고 나머지는 억제하거나 유지한다.
+
+
+- Bit-Plane Slicing : 
+<img width="1434" height="537" alt="image" src="https://github.com/user-attachments/assets/d56ec109-d2e5-4f39-bbcb-ca01a2230a04" />
+
+
 
 
